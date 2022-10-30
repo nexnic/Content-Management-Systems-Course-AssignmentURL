@@ -2,20 +2,49 @@
 
 // API Key
 
-// User
-const openKey = 'ck_f5e2623a2d8dd41ad65e7b0af470a02e1f9837b6';
-
-// Password
-const secretKey = 'cs_4b6217333e8a80ea461ddd73dc67b749edb65127';
-
-// API URL
-const URL = 'https://rainydays.frontendkenterik.no/wp-json/wc/v3/products';
 
 // Async APi
 async function rainydaysAPI() {
   try {
-    const response = await fetch(`${URL} + ?${openKey}`);
+    const response = await fetch(URL + 'products', {
+      headers: { Authorization: bAuth(openKey, secretKey)},
+    });
+
+    const result = await response.json();
+
+    console.log(result);
+
+    for(let i = 0; i < result.length; i++) {
+      console.log(result[i].description);
+    
+      productSection.innerHTML += `
+            <a href="product.html?id=${result[i].sku}" class="product">
+                <div class="product__top">
+                    <img src="${result[i].images[0].src}" class="img__category" alt="Image of jacket name${result[i].name}">
+                </div>
+                <div class="product__mid">
+                    <h5 class="subHead">
+                        ${result[i].name}
+                    </h5>
+                        ${String(result[i].description)}
+                </div>
+                <div class="product__bot">
+                <p class="">
+                    Kr ${result[i].price} ,-
+                </p>
+                <button onclick="rdcart(${result[i].sku})" class="btn">Buy</button>
+                </div>
+            </a>
+        `
+      
+
+    }
+
   } catch (error) {
     console.log(error);
   }
 }
+
+
+
+rainydaysAPI()

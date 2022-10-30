@@ -16,6 +16,9 @@ async function getProducts() {
     });
 
     const result = await response.json();
+    console.log(result);
+    
+    
   } catch (error) {
     // catches errors both in fetch and response.json
     console.log(error);
