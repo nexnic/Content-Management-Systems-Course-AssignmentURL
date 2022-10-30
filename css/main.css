@@ -49,16 +49,20 @@ header {
     margin: 1rem 0 1rem 3rem;
 }
 
-.nav__main {
+.nav__main--container {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     padding:0 2rem 0 2rem;
     align-items: baseline;
+    color: white;
 }
+
+
 
 .nav__main--list {
     display: inline-flex;
+    
     gap: 2rem;
 }
 
@@ -231,10 +235,18 @@ footer {
 .btn__nav {
     background-color: var(--primary);
     padding: .9rem;
-    border-radius: .5rem .5rem 0 0;
     font-weight: bold;
     text-transform: uppercase;
     text-decoration: none;
+}
+
+.btn__nav:hover {
+    background: var(--tertiary-one);
+    padding-bottom: 1.2rem;
+}
+
+.btn__nav--active {
+    background-color: var(--tertiary);
 }
 
 .btn {
@@ -397,6 +409,11 @@ footer {
     color: white;
     
 } 
+
+.text__price {
+    font-size: 1.1rem;
+    color: var(--secondary);
+}
 
 
 /*
