@@ -42,7 +42,9 @@
               const formST = document.querySelector('#SubjectReq');
           // Form Button
               const formBtn = document.querySelector('#form-submit');
-            
+              // loader
+              const apiloader = document.querySelector('.loading');
+        
             // User
                 const openKey = 'ck_f5e2623a2d8dd41ad65e7b0af470a02e1f9837b6';
 
@@ -61,3 +63,16 @@
 
 
         let auth = bAuth(openKey, secretKey);
+
+// global veriable for this page. 
+    
+    // Error handling 
+
+        //Error heading 
+            let errorMessageHead = "";
+
+        // Error Subheading
+            let errorMessageSub = "";
+
+        // Error message
+            let erorrMessage = "";

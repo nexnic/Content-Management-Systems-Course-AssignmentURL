@@ -16,7 +16,8 @@ async function rainydaysAPI() {
 
     for(let i = 0; i < result.length; i++) {
       console.log(result[i].description);
-    
+      apiloader.classList.remove('loading');
+      
       productSection.innerHTML += `
             <a href="product.html?id=${result[i].sku}" class="product">
                 <div class="product__top">

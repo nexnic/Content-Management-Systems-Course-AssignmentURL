@@ -21,7 +21,7 @@ async function productpage() {
         
             const index = result.findIndex((result) => result.sku === id)
             console.log(index);
-        
+            apiloader.classList.remove('loading');
             Page__product.innerHTML += `
                 <h2>
                     ${result[index].name}
