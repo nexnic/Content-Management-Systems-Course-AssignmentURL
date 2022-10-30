@@ -29,7 +29,7 @@ async function rainydaysAPI() {
                         ${String(result[i].description)}
                 </div>
                 <div class="product__bot">
-                <p class="">
+                <p class="text__price">
                     Kr ${result[i].price} ,-
                 </p>
                 <button onclick="rdcart(${result[i].sku})" class="btn">Buy</button>
